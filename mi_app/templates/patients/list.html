@@ -1,0 +1,8 @@
+<h1>Pacientes</h1>
+<ul>
+  {% for patient in patients %}
+    <li>{{ patient.name }}</li>
+  {% empty %}
+    <li>No hay pacientes registrados.</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,19 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Entornos virtuales
+venv/
+env/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+
+# Carpeta migrations (si quieres ignorar migraciones compiladas)
+*/migrations/*.pyc
