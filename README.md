@@ -95,3 +95,4 @@ Una vez configurado todo, inicia el servidor local:
 python manage.py runserver
 
 
+>>>>>>> f1bed002e6a21ce8ff5dc2ce34b68e11405cea34
