@@ -1,13 +1,10 @@
 from django.db import models
 from django.utils import timezone
-from django.core.exceptions import ValidationError
 from .patient import Patient
-
 
 class ActiveHistoryManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(deleted_at__isnull=True)
-
 
 class History(models.Model):
     testimony = models.TextField(blank=True, null=True)
@@ -31,6 +28,7 @@ class History(models.Model):
     deleted_at = models.DateTimeField(blank=True, null=True)
 
     objects = ActiveHistoryManager()
+    all_objects = models.Manager()
 
     def soft_delete(self):
         self.deleted_at = timezone.now()
@@ -47,7 +45,7 @@ class History(models.Model):
         self.save()
 
     def __str__(self):
-        return f"History (Paciente: {self.patient.id}, Fecha: {self.created_at.date()})"
+        return f"History for patient {self.patient_id}"
 
     class Meta:
         db_table = "histories"
