@@ -4,7 +4,7 @@ Este documento detalla la migración de un proyecto desarrollado en **PHP/Larave
 
 ## 1. Visión General del Proyecto
 
-*(Describe en 2-3 frases el propósito de esta aplicación. Ejemplo: "Este sistema gestiona tipos de documento, precios e historiales para una plataforma interna de facturación. Su objetivo es centralizar la configuración maestra de la aplicación.")*
+Este sistema gestiona tipos de documento, precios e historiales para una plataforma interna de facturación. Su objetivo es centralizar la configuración maestra de la aplicación.
 
 ---
 
@@ -95,3 +95,4 @@ Una vez configurado todo, inicia el servidor local:
 python manage.py runserver
 
 
+>>>>>>> f1bed002e6a21ce8ff5dc2ce34b68e11405cea34
