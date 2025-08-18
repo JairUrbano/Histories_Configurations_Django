@@ -1,19 +1,51 @@
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.sqlite3
-
-# Entornos virtuales
+# Entorno virtual
 venv/
 env/
+.venv/
+.env/
 
-# Archivos de sistema
+# Archivos Python compilados - CRÍTICO NO SUBIR
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyo
+*.pyd
+
+# Migraciones - SOLO MANTENER __init__.py
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Archivos de configuración local
+.env
+.env.local
+.env.production
+
+# Base de datos
+*.db
+*.sqlite3
+*.sqlite
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs y archivos temporales
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Archivos del sistema
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Archivos de logs
-*.log
-
-# Carpeta migrations (si quieres ignorar migraciones compiladas)
-*/migrations/*.pyc
+# Archivos de testing local
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
