@@ -1,19 +1,12 @@
 from django.db import models
 from django.utils import timezone
 
-
-class ActiveDocumentTypeManager(models.Manager):
-    def get_queryset(self):
-        return super().get_queryset().filter(deleted_at__isnull=True)
-
-
 class DocumentType(models.Model):
     name = models.CharField(
         max_length=255,
         error_messages={'max_length': 'El nombre no debe superar los 255 caracteres.'}
     )
-    description = models.CharField(
-        max_length=1000,
+    description = models.TextField(
         blank=True, null=True,
         error_messages={'max_length': 'La descripción no debe superar los 1000 caracteres.'}
     )
@@ -22,16 +15,13 @@ class DocumentType(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(blank=True, null=True)
 
-    # Managers
-    objects = ActiveDocumentTypeManager()
-
     def soft_delete(self):
         self.deleted_at = timezone.now()
-        self.save()
+        self.save(update_fields=["deleted_at"])
 
     def restore(self):
         self.deleted_at = None
-        self.save()
+        self.save(update_fields=["deleted_at"])
 
     def __str__(self):
         return self.name

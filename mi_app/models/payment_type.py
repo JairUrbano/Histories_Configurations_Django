@@ -15,8 +15,6 @@ class PaymentType(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     deleted_at = models.DateTimeField(blank=True, null=True)
 
-    objects = ActivePaymentTypeManager()
-
     def soft_delete(self):
         self.deleted_at = timezone.now()
         self.save()

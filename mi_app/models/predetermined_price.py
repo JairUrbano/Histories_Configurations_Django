@@ -1,10 +1,9 @@
-from django.core.validators import MaxLengthValidator
 from django.db import models
 
 class PredeterminedPrice(models.Model):
     name = models.CharField(
         max_length=255,
-        validators=[MaxLengthValidator(255, message="El nombre no debe superar los 255 caracteres.")]
+        error_messages={'max_length': 'El nombre no debe superar los 255 caracteres.'}
     )
     price = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
