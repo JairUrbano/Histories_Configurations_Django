@@ -11,13 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     env:
       DJANGO_SETTINGS_MODULE: mi_proyecto.settings
+
     steps:
       - name: Clonar repositorio
         uses: actions/checkout@v3
+
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Cache pip
         uses: actions/cache@v3
         with:
@@ -25,15 +28,11 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
             ${{ runner.os }}-pip-
-      - name: Crear entorno virtual
-        run: python -m venv venv
-      - name: Activar entorno virtual e instalar dependencias
+
+      - name: Instalar dependencias
         run: |
-          source venv/bin/activate
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Ejecutar tests con reporte detallado (en venv)
-        run: |
-          source venv/bin/activate
-          python manage.py test --verbosity=2
+      - name: Ejecutar tests con reporte detallado
+        run: python manage.py test --verbosity=2
