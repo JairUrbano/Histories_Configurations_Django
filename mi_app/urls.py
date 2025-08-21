@@ -1,5 +1,5 @@
 from django.urls import path
-from .views.history import histories_list, history_create, history_update, history_delete
+from .views.history import history_list, history_create, history_update, history_delete
 from .views.document_types import document_types_list, document_type_create, document_type_update, document_type_delete
 from .views.payment_types import payment_types_list, payment_type_create, payment_type_update, payment_type_delete
 from .views.predetermined_prices import predetermined_prices_list, predetermined_price_create, predetermined_price_update, predetermined_price_delete
