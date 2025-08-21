@@ -1,5 +1,8 @@
 from django.urls import path
-from .views import histories, document_types, payment_types, predetermined_prices
+from .views.histories import *
+from .views.document_types import *
+from .views.payment_types import *
+from .views.predetermined_prices import *
 
 urlpatterns = [
     path("histories/", histories.histories_list, name="histories_list"),
