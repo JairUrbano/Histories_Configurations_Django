@@ -95,7 +95,7 @@ Una vez configurado todo, inicia el servidor local:
 python manage.py runserver
 
 
-4. Módulo de Historias Clínicas – Endpoints
+### 4. Módulo de Historias Clínicas – Endpoints
 Historias Clínicas
 
 GET /history/ – Lista todas las historias clínicas
