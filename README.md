@@ -93,55 +93,40 @@ Para inicializar la base de datos, ejecuta los siguientes comandos:
 Una vez configurado todo, inicia el servidor local:
 ```bash
 python manage.py runserver
+```
+### 4. Módulo de Historias Clínicas – Endpoints 
 
+**Historias Clínicas**
 
-### 4. Módulo de Historias Clínicas – Endpoints
-Historias Clínicas
+*  GET /history/ – Lista todas las historias clínicas
+* POST /history/create/ – Crea una nueva historia clínica
+* PUT /history/<id>/update/ – Actualiza una historia clínica
+* DELETE /history/<id>/delete/ – Elimina una historia clínica
 
-GET /history/ – Lista todas las historias clínicas
+**Tipos de Documento**
 
-POST /history/create/ – Crea una nueva historia clínica
+* GET /document-type/ – Lista todos los tipos de documento
+* POST /document-type/create/ – Crea un nuevo tipo de documento
+* PUT /document-type/<id>/update/ – Actualiza un tipo de documento
+* DELETE /document-type/<id>/delete/ – Elimina un tipo de documento
 
-PUT /history/<id>/update/ – Actualiza una historia clínica
+**Tipos de Pago**
 
-DELETE /history/<id>/delete/ – Elimina una historia clínica
+* GET /payment-type/ – Lista todos los tipos de pago
+* POST /payment-type/create/ – Crea un nuevo tipo de pago
+* PUT /payment-type/<id>/update/ – Actualiza un tipo de pago
+* DELETE /payment-type/<id>/delete/ – Elimina un tipo de pago
 
-Tipos de Documento
+**Precios Predeterminados**
 
-GET /document-type/ – Lista todos los tipos de documento
-
-POST /document-type/create/ – Crea un nuevo tipo de documento
-
-PUT /document-type/<id>/update/ – Actualiza un tipo de documento
-
-DELETE /document-type/<id>/delete/ – Elimina un tipo de documento
-
-Tipos de Pago
-
-GET /payment-type/ – Lista todos los tipos de pago
-
-POST /payment-type/create/ – Crea un nuevo tipo de pago
-
-PUT /payment-type/<id>/update/ – Actualiza un tipo de pago
-
-DELETE /payment-type/<id>/delete/ – Elimina un tipo de pago
-
-Precios Predeterminados
-
-GET /predetermined-price/ – Lista todos los precios predeterminados
-
-POST /predetermined-price/create/ – Crea un nuevo precio predeterminado
-
+* GET /predetermined-price/ – Lista todos los precios predeterminados
+* POST /predetermined-price/create/ – Crea un nuevo precio predeterminado
 PUT /predetermined-price/<id>/update/ – Actualiza un precio predeterminado
+* DELETE /predetermined-price/<id>/delete/ – Elimina un precio predeterminado
 
-DELETE /predetermined-price/<id>/delete/ – Elimina un precio predeterminado
+### 5. Características
 
-5. Características
-
-CRUD completo en cada entidad.
-
-Validaciones a través de serializers.
-
-Extensible a filtros, búsquedas y paginación.
-
-Relaciones entre historias clínicas, documentos, pagos y precios.
+* CRUD completo en cada entidad.
+* Validaciones a través de serializers.
+* Extensible a filtros, búsquedas y paginación.
+* Relaciones entre historias clínicas, documentos, pagos y precios.
